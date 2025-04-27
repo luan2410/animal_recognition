@@ -1,6 +1,8 @@
 pip install tensorflow
 pip install Pillow
 pip install scipy
+pip install opencv-python
+
 b1: chay train
 
 
