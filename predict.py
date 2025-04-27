@@ -45,4 +45,5 @@ print("Predicted animal:", predict_animal(image_path2))
 # In ra các lớp đã học
 print("Classes the model can recognize:")
 for class_name, class_index in train_generator.class_indices.items():
-    print(f"Class name: {class_name}, Class index: {class_index}")
+
+    print(f"Class name : {class_name}, Class index: {class_index}")
