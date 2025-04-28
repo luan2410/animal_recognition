@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # Load model đã train
-model = load_model('models/resnet_animal.h5')
+model = load_model('models/resnet_animal3.h5')
 
 # 1. Tiền xử lý dữ liệu
 train_datagen = ImageDataGenerator(

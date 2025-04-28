@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán động vật</title>
+</head>
+<body>
+    <h1>Chọn ảnh để dự đoán</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <button type="submit">Dự đoán</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        document.getElementById('upload-form').addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const formData = new FormData();
+            const imageInput = document.getElementById('image');
+            formData.append('image', imageInput.files[0]);
+
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = "Kết quả: " + result.prediction;
+        });
+    </script>
+</body>
+</html>
